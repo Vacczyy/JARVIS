@@ -1,2 +1,3 @@
 task_chat
 task_TTS
+task_misc

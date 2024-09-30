@@ -66,7 +66,3 @@ def text_classification(transcription, api_key, end_conversation):
    else:
       print(f"No request \"{request_stack[0]}\" found")
    return end_conversation
-
-if __name__ == "__main__":
-    transcription = "Go to jw.org"
-    text_classification(transcription, os.getenv("API_KEY"))

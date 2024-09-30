@@ -1,5 +1,7 @@
 {
     "chat:short|long": "provides a short or long text response to a question.",
     "sleep": "ends the current conversation.",
-    "terminate": "ends the current session. Important: Only call if explicitly asked as this will kill the script."
+    "terminate": "ends the current session. Important: This will end the script.",
+    "unclear":"only returned if the request is unclear.",
+    "none":"only returned if the request does not match any of the categories."
 }

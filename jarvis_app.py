@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 import speech_recognition as sr
+from pathlib import Path
 
 my_api_key = os.getenv("API_KEY")
 conversation_file_path = Path(__file__).parent / "conversation.txt"
