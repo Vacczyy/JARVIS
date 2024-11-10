@@ -1,10 +1,9 @@
+import os
 from dotenv import load_dotenv
 load_dotenv()
-import os
+user_api_key = os.getenv("API_KEY")
 import speech_recognition as sr
 from pathlib import Path
-
-my_api_key = os.getenv("API_KEY")
 conversation_file_path = Path(__file__).parent / "conversation.txt"
 from jarvis_STT import *
 
@@ -17,12 +16,12 @@ def main():
 
    with microphone as source:
       recognizer.pause_threshold = .5   
-      print("\nOne moment- adjusting to ambient noise.")
+      print("\nAdjusting to ambient noise...")
       recognizer.adjust_for_ambient_noise(source, duration=5)
          
    while script_active:
       with microphone as source:
-         script_active = standby(sr, source, recognizer, my_api_key)
+         script_active = standby(sr, source, recognizer, user_api_key)
 
 # Clear the previous conversation in conversation.txt
 def clear_history():

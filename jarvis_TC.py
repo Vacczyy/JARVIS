@@ -5,7 +5,7 @@ import datetime
 from importlib import import_module
 from jarvis_app import conversation_file_path
 
-task_list_file = open("task_list_file.txt", "r")
+task_list_file = open("./JARVIS/task_list_file.txt", "r")
 task_list = task_list_file.read().split()
 for task in task_list:
     module = __import__(task)
@@ -13,7 +13,7 @@ for task in task_list:
         if callable(getattr(module, attr)):
             globals()[attr] = getattr(module, attr)
 
-with open('request_categories.json', 'r') as r:
+with open('./JARVIS/request_categories.json', 'r') as r:
     request_categories = json.load(r)
 
 classification_intructions = """
@@ -24,11 +24,11 @@ These are the categories:
 for category, description in request_categories.items():
     classification_intructions += f'"{category}" {description}\n'
 
-def sleep(request_stack):
+def standby(request_stack):
    end_conversation = True
    return end_conversation
 
-def terminate(request_stack):
+def sleep(request_stack):
    exit()
 
 def unknown(request_stack):

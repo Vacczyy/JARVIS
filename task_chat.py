@@ -1,6 +1,6 @@
 from openai import OpenAI
 import datetime
-from jarvis_app import conversation_file_path, my_api_key
+from jarvis_app import conversation_file_path, user_api_key
 from task_TTS import *
 
 def inscribe(response):
@@ -14,7 +14,7 @@ Keep your response concise and under one sentence.
 def chat_short(transcription):
    print("Sending prompt.")
    conversation_txt = open(conversation_file_path, "r")
-   client = OpenAI(api_key = my_api_key)
+   client = OpenAI(api_key = user_api_key)
    response = client.chat.completions.create(
       model="gpt-3.5-turbo-0125",
       messages=[
@@ -50,7 +50,7 @@ Keep your response under five sentences.
 """
 def chat_long(transcription):
    conversation_txt = open(conversation_file_path, "r")
-   client = OpenAI(api_key = my_api_key)
+   client = OpenAI(api_key = user_api_key)
    response = client.chat.completions.create(
       model="gpt-3.5-turbo-0125",
       messages=[

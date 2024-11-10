@@ -1,7 +1,6 @@
 {
-    "chat:short|long": "provides a short or long text response to a question.",
-    "sleep": "ends the current conversation.",
-    "terminate": "ends the current session. Important: This will end the script.",
-    "unclear":"only returned if the request is unclear.",
-    "none":"only returned if the request does not match any of the categories."
+    "chat:short/long": "a short or long response to a question. Default to short unless asked to elaborate.",
+    "standby": "ends the current conversation by putting you on standby, allowing a new conversation to begin.",
+    "sleep": "ends the conversation by killing the script.",
+    "none": "the request does not match any categories or is meaningless and is disregarded."
 }
