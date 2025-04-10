@@ -1,6 +1,6 @@
 {
-    "chat_short/long": "a short or long response to a question. Default to short unless requested to.",
-    "standby": "ends the current conversation but doesn't end the program.",
-    "sleep": "ends the conversation by killing the script.",
+    "chat_short/long": "a short or long response to a question. Default to short unless asked otherwise.",
+    "standby": "ends the current conversation but doesn't kill the program.",
+    "sleep": "kills the program.",
     "unknown": "the request does not match any categories. Include hallucinations of the speech-to-text model or nonsensicle phrases such as 'Thank you for watching!' 'Alright, that's all.' or 'You'"
 }

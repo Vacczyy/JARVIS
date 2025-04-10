@@ -46,10 +46,10 @@ SPEAKING
 
 |Classification|Explanation|
 |-|-|
-|Chat|Basic text response to a question. Followed by either "short" or "long."|
-|Standby|Ends the current conversation and puts JARVIS on standby. Allows for a new conversation to begin.|
-|Sleep|Ends the conversation by killing the script.|
-|None|The request does not match any categories and is disregarded.|
+|Chat|A short or long response to a question. Defaults to short unless asked otherwise.|
+|Standby|Ends the current conversation but doesn't kill the program.|
+|Sleep|Kills the script.|
+|Unknown|The request does not match any categories.|
 
 ## Upcoming Features
 
