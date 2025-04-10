@@ -11,11 +11,13 @@ from openai import OpenAI
 import speech_recognition as sr
 from playsound import playsound
 
-# Open files
-history = open('./history.txt', 'r+')
+# Create and open files
+history = open('./history.txt', 'a')
+
+history = open('history.txt', 'r+')
 with open('./request_categories.json', 'r') as file:
     request_categories = json.load(file)
-tts_audio = './tts_audio.wav'
+tts_audio = 'tts_audio.wav'
 
 # Set up recognizer module
 recognizer = sr.Recognizer()
@@ -51,7 +53,7 @@ def clear_history():
 with microphone as source:
    recognizer.pause_threshold = 1
    print("\nADJUSTING TO AMBIENT NOISE")
-   recognizer.adjust_for_ambient_noise(source, duration=6)
+   recognizer.adjust_for_ambient_noise(source, duration=5)
 
 def main():
    clear_history()
@@ -190,7 +192,7 @@ def tts(chat_out):
    ) as tts_out:
       tts_out.stream_to_file(tts_audio)
 
-   print("SPEAKING\n")
+   print("SPEAKING")
    playsound(tts_audio)
 
 def standby(request_stack):

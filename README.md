@@ -1,7 +1,6 @@
 # JARVIS
 
-JARVIS is a voice-activated chatbot written in Python that uses OpenAI models GPT-3.5 Turbo, Whisper, and TTS-1. 
-
+JARVIS is a voice-activated chatbot written in Python that uses OpenAI models GPT-3.5 Turbo, Whisper, and TTS. 
 **You'll need an active API key and the latest version of Python 3 installed.**
 
 ## Installation
@@ -24,7 +23,8 @@ pip install -r requirements.txt
 ```
 4. Add your API key to a .env file
 ```plaintext
-API_KEY = "--paste here--"
+API_KEY = "--(paste here)--"
+KEYPHRASE = "--(Optional)--"
 ```
 ## Usage
 
@@ -32,17 +32,26 @@ API_KEY = "--paste here--"
 ```bash
 python3 DIRECTORY/TO/CLONE/jarvis_app.py
 ```
-- An expected output should be somewhat like:
+- When you see 'INACTIVE,' Jarvis is in a state where it will wait for the keyphrase before paying attention.
+- Once Jarvis is listening, say your request into the microphone.
+- The expected output should be somewhat like:
 ```plaintext
-Adjusting to ambient noise...
+ADJUSTING TO AMBIENT NOISE
 
-Standby initiated.
-Listening.
-Audio transcribed.
+INACTIVE
 
-Classifying request.
-Request: [--classification--, --transcription--]
---Output--
+LISTENING
+
+INPUT: ----
+
+CLASSIFYING REQUEST...
+CLASSIFICATION: [--classification--, --transcription--]
+
+THINKING...
+RESPONSE: ----
+
+FORMULATING SPEECH...
+SPEAKING
 ```
 
 ## Request Categories
